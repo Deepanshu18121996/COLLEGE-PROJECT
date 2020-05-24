@@ -1,0 +1,80 @@
+<div class="new_wrapper">
+  <section>
+    <aside>
+      <div class="setting">
+        <div>
+          <img
+            src="../../../assets/images/admin/setting.svg"
+            (click)="get_category()"
+            alt=""
+          />
+        </div>
+        <h1>Category</h1>
+      </div>
+
+      <div class="new_menu">
+        <ul>
+          <li
+            *ngFor="let cat of category_name"
+            (click)="category_books(cat.category)"
+          >
+            {{ cat.category }}
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <div class="table-responsive user">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th>S.no</th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Writer</th>
+              <th>Edition</th>
+              <th>Published-year</th>
+              <th>Current-Price</th>
+              <th>Image</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let books of books_name; let i = index">
+              <th>{{ i + 1 }}</th>
+              <th style="max-width: 150px !important;">{{ books._id }}</th>
+              <th style="max-width: 200px !important; word-wrap: break-word;">
+                {{ books.name }}
+              </th>
+              <th>{{ books.category }}</th>
+              <th>{{ books.price }}</th>
+              <th>{{ books.writer }}</th>
+              <th>{{ books.edition }}</th>
+              <th>{{ books.published_year }}</th>
+              <th>{{ books.current_price }}</th>
+              <th>
+                <img
+                  src="http://localhost:8899/images/{{ books.image }}"
+                  class="books_image"
+                  alt="product image"
+                />
+              </th>
+              <td class="edit">
+                <div id="e_pos">
+                  <img
+                    src="../../../assets/images/admin/delete.svg"
+                    (click)="delete_books(books._id, books.category)"
+                    alt=""
+                  />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </section>
+</div>

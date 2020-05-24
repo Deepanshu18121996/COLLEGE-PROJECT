@@ -1,0 +1,286 @@
+<section class="term_condition">
+  <h1>BOOKSTOR TERMS AND CONDITIONS</h1>
+  <ul>
+    <h1>AGREEMENT TO TERMS</h1>
+    <li>
+      These Terms and Conditions constitute a legally binding agreement made
+      between you, whether personally or on behalf of an entity and Bookstor,
+      concerning your access to and use of our website as well as any other
+      media form, media channel, mobile website or mobile application related,
+      linked, or otherwise connected thereto.
+    </li>
+    <li>
+      You agree that by accessing the Site, you have read, understood, and agree
+      to be bound by all of these Terms and Conditions. If you do not agree with
+      all of these Terms and Conditions, then you are expressly prohibited from
+      using the Site and you must discontinue use immediately.
+    </li>
+    <li>
+      The information provided on the Site is not intended for distribution to
+      or use by any person or entity in any jurisdiction or country where such
+      distribution or use would be contrary to law or regulation or which would
+      subject us to any registration requirement within such jurisdiction or
+      country.
+    </li>
+    <li>
+      Accordingly, those persons who choose to access the Site from other
+      locations do so on their own initiative and are solely responsible for
+      compliance with local laws, if and to the extent local laws are
+      applicable.
+    </li>
+  </ul>
+
+  <ul>
+    <h1>
+      USER REGISTRATION
+    </h1>
+    <li>
+      You may be required to register with the Site. You agree to keep your
+      password confidential and will be responsible for all use of your account
+      and password. We reserve the right to remove, reclaim, or change a
+      username you select if we determine, in our sole discretion, that such
+      username is inappropriate, obscene, or otherwise objectionable
+    </li>
+  </ul>
+
+  <ul>
+    <h1>WEBSITE CLAUSE FOR THE SELLERS</h1>
+    <li>
+      We will accept all the used books sold by the seller at 30% of the
+      original price after a proper verification.
+    </li>
+    <li>
+      ) For all the technical books sold by the sellerr to Bookstor, the edition
+      of book to be sold should not be older than 2 editions as compared to the
+      latest printed edition (or it should not be of very old edition).
+    </li>
+    <li>
+      For all the non-technical books sold by the seller to Bookstor, the
+      edition of book to be sold should not be older than 5 editions as compared
+      to the latest printed edition (or it should not be of very old edition).
+    </li>
+    <li>
+      If the non-technical book sold by the seller is of very old edition it
+      won’t be accepted until and unless published by a very good author.
+    </li>
+    <li>
+      We reserve all the rights to accept and decline any book sold by the
+      seller to Bookstor in case of any content missing from the books.
+    </li>
+    <li>
+      Any book will be accepted only if they are sold in a good condition and
+      there isn’t any content missing from it.
+    </li>
+    <li>
+      Seller is considered to be liable in case their book does not reach us
+    </li>
+    <li>
+      The address provided by the seller should be correct in case the book sold
+      is rejected by some cause.
+    </li>
+    <li>
+      If the delivery charge of the book being rejected is more than 100 rupees,
+      then the delivery charge should be deposited in the official account of
+      our website only then the book is to be returned to the seller.
+    </li>
+    <li>
+      The seller is adviced to send the copy of the payment receipt as the book
+      name and order ID is to be used to receive the book that has been
+      returned.
+    </li>
+  </ul>
+
+  <ul class="term_btn">
+    <li>
+      <input type="checkbox" name="check" id="check" (change)="term($event)" />
+      <span>I Accept</span>
+    </li>
+  </ul>
+</section>
+
+<div class="add_books">
+  <section>
+    <h1>Sell Books</h1>
+    <div class="form-div">
+      <form class="form" [formGroup]="add_books" (ngSubmit)="books()">
+        <div class="input-div">
+          <label><i class="fa fa-book" aria-hidden="true"></i>Book Name</label>
+          <input
+            type="text"
+            name=""
+            placeholder="Enter Book name"
+            formControlName="name"
+          />
+          <div
+            *ngIf="
+              add_books.controls.name.invalid && add_books.controls.name.dirty
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="add_books.controls.name.errors.required">
+              Name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="input-div">
+          <label
+            ><i class="fa fa-plus-square-o" aria-hidden="true"></i
+            >Category</label
+          >
+          <input
+            type="text"
+            name=""
+            placeholder="Enter category"
+            formControlName="category"
+          />
+          <div
+            *ngIf="
+              add_books.controls.category.invalid &&
+              add_books.controls.category.dirty
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="add_books.controls.category.errors.required">
+              Category is required
+            </div>
+          </div>
+        </div>
+
+        <div class="input-div">
+          <label><i class="fa fa-inr" aria-hidden="true"></i>Price</label>
+          <input
+            type="text"
+            name=""
+            placeholder="Enter price"
+            formControlName="price"
+          />
+          <div
+            *ngIf="
+              add_books.controls.price.invalid && add_books.controls.price.dirty
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="add_books.controls.price.errors.required">
+              price is required
+            </div>
+            <div *ngIf="add_books.controls.price.errors.pattern">
+              enter integer only
+            </div>
+            <div *ngIf="add_books.controls.price.errors.minlength">
+              enter right price
+            </div>
+          </div>
+        </div>
+
+        <div class="input-div">
+          <label><i class="fa fa-user" aria-hidden="true"></i>Writer</label>
+          <input
+            type="text"
+            name=""
+            placeholder="Enter Writer name"
+            formControlName="writer"
+          />
+          <div
+            *ngIf="
+              add_books.controls.writer.invalid &&
+              add_books.controls.writer.dirty
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="add_books.controls.writer.errors.required">
+              writer is required
+            </div>
+          </div>
+        </div>
+
+        <div class="input-div">
+          <label
+            ><i class="fa fa-calendar" aria-hidden="true"></i
+            >Published-year</label
+          >
+          <input
+            type="text"
+            name=""
+            placeholder="Enter Published-year"
+            formControlName="published_year"
+          />
+          <div
+            *ngIf="
+              add_books.controls.published_year.invalid &&
+              add_books.controls.published_year.dirty
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="add_books.controls.published_year.errors.required">
+              Published-year is required
+            </div>
+            <div *ngIf="add_books.controls.published_year.errors.pattern">
+              write proper Published year
+            </div>
+            <div *ngIf="add_books.controls.published_year.errors.minlength">
+              4 char required
+            </div>
+          </div>
+        </div>
+
+        <div class="input-div">
+          <label
+            ><i class="fa fa-pencil-square-o" aria-hidden="true"></i
+            >Edition</label
+          >
+          <input
+            type="text"
+            name=""
+            placeholder="Enter Edition"
+            formControlName="edition"
+          />
+          <div
+            *ngIf="
+              add_books.controls.edition.invalid &&
+              add_books.controls.edition.dirty
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="add_books.controls.edition.errors.required">
+              Edition is required
+            </div>
+            <div *ngIf="add_books.controls.edition.errors.pattern">
+              Proper Pattern is required
+            </div>
+          </div>
+        </div>
+
+        <div class="input-div">
+          <label
+            ><i class="fa fa-file-image-o" aria-hidden="true"></i>Image</label
+          >
+          <input
+            type="file"
+            name=""
+            placeholder="Image"
+            formControlName="Image"
+            (change)="uimage($event)"
+          />
+          <div
+            *ngIf="
+              add_books.controls.Image.invalid && add_books.controls.Image.dirty
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="add_books.controls.Image.errors.required">
+              Image is required
+            </div>
+          </div>
+        </div>
+
+        <input
+          type="submit"
+          class="btn btn-success custom"
+          value="Submit"
+          [disabled]="add_books.invalid"
+        />
+      </form>
+    </div>
+  </section>
+</div>

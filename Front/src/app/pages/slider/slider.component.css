@@ -1,0 +1,60 @@
+.bg-image--sabban{
+    background-image: url(src/assets/images/bg/10.jpg);
+    background-repeat: no-repeat;
+    height:86vh;
+    background-size: cover;
+    background-position: center center;
+}
+ .bg-image--deep {
+      background-image: url(src/assets/images/bg/11.jpg);
+      background-repeat: no-repeat;
+      height:86vh;
+      background-size: cover;
+      background-position: center center; 
+    }
+ .bg-image--preety{
+        background-image: url(src/assets/images/bg/16.jpg);
+        background-repeat: no-repeat;
+        height:86vh;
+        background-size: cover;
+        background-position: center center;
+    }
+    .box {
+  width: 160px;
+  height: 120px;
+  float: left;
+  background: #347fc3;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
+.text {
+  text-align: center;
+  margin-top: 56px;
+  color: #fff;
+  font-size: 1.0em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+.bounce {
+  animation-name: bounce;
+}
+.custom{
+    text-align:left;
+    margin-bottom: 80px;
+}
+.orange{
+    color:#e59285;
+}

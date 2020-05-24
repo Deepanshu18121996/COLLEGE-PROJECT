@@ -1,0 +1,38 @@
+<div class="background">
+  <div class="container">
+    <h1>Books Request</h1>
+    <table class="table table-hover table-borderless">
+      <thead class="thead-dark">
+        <th>S.no</th>
+        <th>Book Title</th>
+        <th>Author Name</th>
+        <th>Edition</th>
+        <th>Publisher</th>
+        <th>Description</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of bookreqData; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ c.book_title }}</td>
+          <td>{{ c.author_name }}</td>
+          <td>{{ c.edition }}</td>
+          <td>{{ c.publisher }}</td>
+          <td>{{ c.description }}</td>
+          <td>{{ c.created_at | date }}</td>
+          <td>
+            <a
+              ><img
+                src="../../../assets/images/admin/tick.png"
+                width="35"
+                height="35"
+                (click)="delbookreq(c._id, c.email)"
+            /></a>
+          </td>
+        </tr>
+      </tbody>
+      <div class="new_menu"></div>
+    </table>
+  </div>
+</div>

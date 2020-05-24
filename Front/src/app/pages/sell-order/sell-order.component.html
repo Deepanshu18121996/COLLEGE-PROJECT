@@ -1,0 +1,42 @@
+<section>
+  <h1>Sell Order</h1>
+  <span><i class="fa fa-opencart" aria-hidden="true"></i></span>
+  <div class="table-responsive order" id="order">
+    <table class="table table-borderless table-hover">
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Writer</th>
+          <th>price</th>
+          <th>Edition</th>
+          <th>Image</th>
+          <th>Published-year</th>
+          <th>Date</th>
+          <th>status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of order; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ o.name }}</td>
+          <td>{{ o.category }}</td>
+          <td>{{ o.price }}</td>
+          <td>{{ o.writer }}</td>
+          <td>{{ o.edition }}</td>
+          <td>
+            <img
+              src="http://localhost:8899/images/{{ o.image }}"
+              class="image"
+              alt=""
+            />
+          </td>
+          <td>{{ o.published_year }}</td>
+          <td>{{ o.createrd_at | date: "medium" }}</td>
+          <td class="status">status</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.nav_move {
+  margin-left: 0px !important;
+}
+.cross {
+  div:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  div:nth-child(2) {
+    opacity: 0;
+  }
+  div:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}
+.header_move {
+  width: calc(100vw - 280px) !important;
+}
+.header_move2 {
+  width: calc(100vw - 400px) !important;
+}
+.header_move3 {
+  width: calc(100vw - 500px) !important;
+}
+.header_move4 {
+  width: calc(100vw - 300px) !important;
+}
+
+.ham_bar {
+  div {
+    background-color: red !important;
+  }
+}
+
+.danger {
+  color: rgb(192, 79, 79);
+  font-size: 18px;
+}
+
+.hide {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.blur {
+  filter: blur(2px);
+  cursor: progress !important;
+  input[type="submit"] {
+    pointer-events: none;
+  }
+}

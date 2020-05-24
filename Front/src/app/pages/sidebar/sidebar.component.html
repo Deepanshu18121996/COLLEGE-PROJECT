@@ -1,0 +1,37 @@
+<section>
+  <h1>Menu</h1>
+  <ul>
+    <li>
+      <i class="fa fa-user" aria-hidden="true"></i>
+      <a href="javascript:void(0)" [routerLink]="['/myacc']"> Profile </a>
+    </li>
+    <li>
+      <i class="fa fa-pencil-square" aria-hidden="true"></i
+      ><a href="javascript:void(0)" [routerLink]="['editprofile']"> Edit </a>
+    </li>
+    <li>
+      <i class="fa fa-sticky-note" aria-hidden="true"></i>
+      <a href="javascript:void(0)" [routerLink]="['notesreq']">Request Notes</a>
+    </li>
+    <li>
+      <i class="fa fa-book" aria-hidden="true"></i>
+      <a href="javascript:void(0)" [routerLink]="['bookreq']">Request Books</a>
+    </li>
+    <li>
+      <i class="fa fa-inr" aria-hidden="true"></i>
+      <a href="javascript:void(0)" [routerLink]="['sell']">Sell Books</a>
+    </li>
+    <li>
+      <i class="fa fa-opera" aria-hidden="true"></i>
+      <a href="javascript:void(0)" [routerLink]="['order']"> Order</a>
+    </li>
+    <li>
+      <i class="fa fa-sort" aria-hidden="true"></i>
+      <a href="javascript:void(0)" [routerLink]="['sell_order']">Sell Order</a>
+    </li>
+    <li>
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <a href="javascript:void(0)" (click)="logout()"> LogOut</a>
+    </li>
+  </ul>
+</section>

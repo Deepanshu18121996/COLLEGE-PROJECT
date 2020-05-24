@@ -1,0 +1,51 @@
+<div class=background>
+    <div class="row">
+        <div class="lg-3">
+            <aside class="wedget__categories poroduct--cat">
+                <h3 class="wedget__title">Category</h3>
+                <ul>
+                    <li class="noteslicss" *ngFor="let category of note_category$ | async"
+                        (click)="reloadNotes(category.notecat)">
+                        <span>{{ category.notecat }}</span>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <h1>Notes </h1>
+        <table class="table table-hover table-borderless">
+            <thead class="thead-dark">
+                <th>S.no</th>
+
+                <th>Category name</th>
+                <th>Notes name</th>
+                <th>Notes description</th>
+                <th>File</th>
+                <th>Created At</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of note_detail$ | async  ; index as i;">
+                    <td>{{i+1}}</td>
+
+                    <td>{{c.cat_name == 'others' ? c.custom_cat : c.cat_name }}</td>
+                    <td>{{c.note_name}}</td>
+                    <td>{{c.description}}</td>
+                    <td><a href="http://localhost:8899/file/{{c.file}}" target="_blank"><img
+                                src="/assets/images/pdf.png" width=100 height=60 /> </a></td>
+                    <td>{{c.created_at|date}}</td>
+                    <td>
+                        <a><img src="../../../assets/images/admin/delete.png" width=35 height=30
+                                (click)=" delsavednotes(c._id)"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

@@ -1,0 +1,110 @@
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area bg-image--6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bradcaump__inner text-center">
+          <h2 class="bradcaump-title">Checkout</h2>
+          <nav class="bradcaump-content">
+            <a class="breadcrumb_item" href="index.html">Home</a>
+            <span class="brd-separetor">/</span>
+            <span class="breadcrumb_item active">Checkout</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Start Checkout Area -->
+<section class="wn__checkout__area section-padding--lg bg__white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12 data" *ngFor="let user of user_data">
+        <div class="col-lg-6">
+          <h3>Billing details</h3>
+          <div class="margin_between">
+            <div class="input_box space_between">
+              <label>First name </label>
+              <p>{{ user.name }}</p>
+            </div>
+            <div class="input_box space_between">
+              <label>Email</label>
+              <p>{{ user.email }}</p>
+            </div>
+            <div class="input_box">
+              <label>Country</label>
+              <p>India</p>
+            </div>
+            <div class="input_box">
+              <label>State</label>
+              <p>{{ user.state }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 second">
+          <div class="margin_between">
+            <div class="input_box">
+              <label>Address</label>
+              <div class="address">
+                {{ user.address }}
+              </div>
+            </div>
+            <div class="input_box space_between">
+              <label>Phone </label>
+              <p>{{ user.contact }}</p>
+            </div>
+            <div class="input_box top">
+              <label>Postcode </label>
+              <p>{{ user.pincode }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-12 md-mt-40 sm-mt-40">
+        <div class="wn__order__box">
+          <h3 class="onder__title">Your order</h3>
+          <ul class="check">
+            <li class="check_width head">Product</li>
+            <li class="check_width head">Quantity</li>
+            <li class="check_width head">per</li>
+            <li class="check_width head">Total</li>
+          </ul>
+
+          <ul class="check" *ngFor="let order of order">
+            <li class="check_width">{{ order.name }}</li>
+            <li class="check_width arrange">{{ order.quantity }}</li>
+            <li class="check_width arrange">${{ order.current_price }}</li>
+            <li class="check_width arrange">
+              <span>${{ order.total }}</span>
+            </li>
+          </ul>
+          <ul class="shipping__method">
+            <li>
+              Cart Subtotal <span>${{ subtotal }}</span>
+            </li>
+            <li>
+              Gst
+              <ul>
+                <li>
+                  <label> ${{ gst }}</label>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="total__amount">
+            <li>
+              Order Total <span>${{ grandtotal }}</span>
+            </li>
+          </ul>
+        </div>
+        <div id="accordion" class="checkout_accordion mt--30" role="tablist">
+          <button class="btn btn-success" (click)="do_order()">
+            Direct payment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Checkout Area -->

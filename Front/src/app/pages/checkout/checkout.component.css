@@ -1,0 +1,58 @@
+.address {
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.second {
+  margin-top: 3rem;
+  margin-left: 4rem;
+}
+
+.top {
+  margin-top: 1rem;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+.check_width {
+  max-width: 100px;
+}
+
+.head {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.arrange {
+  justify-self: center;
+}
+
+.payment {
+  background-color: red;
+  width: 80px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+p {
+  text-transform: capitalize;
+}

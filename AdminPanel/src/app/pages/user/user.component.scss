@@ -1,0 +1,179 @@
+section {
+  background-image: -webkit-linear-gradient(0deg, #bdc3c7 0%, #2c3e50 100%);
+  transition: all 250ms ease-in-out;
+
+  h1 {
+    padding: 1rem 0rem 0rem 16%;
+    color: whitesmoke;
+    background-image: -webkit-linear-gradient(0deg, #de6262 -2%, #ffb88c 80%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .user {
+    width: 80vw;
+    max-height: 80vh;
+    border: 2px solid black;
+    margin-left: 16%;
+    margin-top: 1rem;
+    transition: all 400ms ease-in-out;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    thead {
+      background-color: black;
+      tr {
+        transition: all 400ms ease-in-out;
+        th {
+          color: white;
+        }
+      }
+    }
+
+    tr:hover {
+      background-color: rgb(68, 68, 68);
+    }
+    tr:hover > td {
+      color: white;
+    }
+
+    .edit {
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+      position: relative;
+      div {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgb(197, 174, 174);
+        margin-left: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        img {
+          width: 70%;
+          height: 70%;
+        }
+      }
+    }
+
+    .edit > div:nth-child(1):hover::after {
+      content: "Sent Email";
+      position: absolute;
+      top: 60px;
+      left: 15px;
+      width: auto;
+      height: auto;
+      background-color: black;
+      color: white;
+      font-size: 14px;
+      border-radius: 6px;
+    }
+    .edit > div:nth-child(2):hover::after {
+      content: "DeleteUser";
+      position: absolute;
+      top: 60px;
+      left: 70px;
+      width: auto;
+      height: auto;
+      background-color: black;
+      color: white;
+      font-size: 14px;
+      border-radius: 6px;
+    }
+  }
+  .user::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
+
+.email_send {
+  width: 80vw;
+  height: 300px;
+  position: relative;
+  left: 15%;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background-image: url(../../../assets/images/admin/email_send.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  border-radius: 8px;
+  transition: all 400ms ease-in-out;
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-left: 100%;
+    cursor: pointer;
+  }
+
+  div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    label {
+      color: white;
+    }
+    input {
+      width: 100%;
+      border: 1px solid black;
+      color: #de6262;
+      outline: none;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      border-radius: 6px;
+    }
+  }
+  input[type="submit"] {
+    width: 120px;
+    height: 40px;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    color: blue;
+    background-image: -webkit-linear-gradient(0deg, #6e45e1 0%, #89d4cf 100%);
+    cursor: pointer;
+  }
+}
+
+.table_move {
+  margin-left: 0 !important;
+}
+
+.email_move {
+  margin-top: -20% !important;
+  opacity: 1;
+}
+
+.section_blur {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1200px) {
+  .email_send {
+    position: relative;
+    left: 45%;
+    width: 40vw;
+    padding: 4rem;
+    div:nth-child(1) {
+      margin-top: 1rem;
+      input {
+        width: 100%;
+        border: 1px solid black;
+        color: #de6262;
+        outline: none;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-radius: 6px;
+      }
+    }
+  }
+}

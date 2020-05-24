@@ -1,0 +1,54 @@
+<section>
+  <h1>Order</h1>
+  <span><i class="fa fa-opencart" aria-hidden="true"></i></span>
+  <div class="table-responsive order" id="order">
+    <table class="table table-borderless table-hover">
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>price</th>
+          <th>Image</th>
+          <th>Total</th>
+          <th>Date</th>
+          <th>status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of data; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let name of order.name">{{ name }}</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li *ngFor="let quantity of order.quantity">{{ quantity }}</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li *ngFor="let price of order.price">{{ price }}</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li *ngFor="let image of order.image">
+                <img
+                  src="http://localhost:8899/images/{{ image }}"
+                  class="book"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </td>
+          <td>{{ order.grandtotal }}</td>
+          <td>{{ order.Created_at | date: "medium" }}</td>
+          <td class="status">{{ order.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

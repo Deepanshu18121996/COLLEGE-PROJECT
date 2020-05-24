@@ -1,0 +1,44 @@
+.cart_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  cursor: pointer;
+}
+.product-quantity {
+  position: relative;
+}
+
+.product-quantity > h1 {
+  font-size: 24px;
+}
+.upper {
+  position: absolute;
+  top: 35%;
+  left: 19%;
+}
+
+.lower {
+  position: absolute;
+  top: 35%;
+  left: 70%;
+}
+.upper:hover,
+.lower:hover {
+  color: grey;
+}
+
+.product-remove {
+  position: relative;
+}
+.product-remove > a {
+  position: absolute;
+  top: 25%;
+}

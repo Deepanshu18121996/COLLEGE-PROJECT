@@ -1,0 +1,223 @@
+<div class="order_wrapper">
+  <section>
+    <div class="search">
+      <input
+        type="text"
+        name=""
+        placeholder="Search By ID"
+        (keyup)="search($event)"
+        autofocus
+      />
+    </div>
+    <div class="table-responsive order" id="order">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Edition</th>
+            <th>published-year</th>
+            <th>Writer</th>
+            <th>Status</th>
+            <th>Image</th>
+            <th>Controls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sell of sell_response; index as i">
+            <td>{{ sell._id }}</td>
+            <td>{{ sell.name }}</td>
+            <td>{{ sell.email }}</td>
+            <td>{{ sell.category }}</td>
+            <td>{{ sell.price }}</td>
+            <td>{{ sell.edition }}</td>
+            <td>{{ sell.published_year }}</td>
+            <td>{{ sell.writer }}</td>
+            <td>{{ sell.status }}</td>
+            <img
+              src="http://localhost:8899/images/{{ sell.image }}"
+              class="books_image"
+              alt="product image"
+            />
+            <td>
+              <a href="javascript:void(0)" (click)="Edit(i)"> Edit</a>
+              <a
+                href="javascript:void(0)"
+                (click)="Delete(sell._id, sell.email)"
+                class="del"
+                >Delete</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<section class="update">
+  <div class="add_books">
+    <h1>Add Books</h1>
+    <span (click)="remove()">X</span>
+    <section>
+      <form [formGroup]="add_books" (ngSubmit)="books()">
+        <div class="part1 form_align">
+          <div>
+            <label>Name</label>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter Book name"
+              formControlName="name"
+            />
+            <div
+              *ngIf="
+                add_books.controls.name.invalid && add_books.controls.name.dirty
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="add_books.controls.name.errors.required">
+                Name is required
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label>Category</label>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter category"
+              formControlName="category"
+            />
+            <div
+              *ngIf="
+                add_books.controls.category.invalid &&
+                add_books.controls.category.dirty
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="add_books.controls.category.errors.required">
+                Category is required
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label>Price</label>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter price"
+              formControlName="price"
+            />
+            <div
+              *ngIf="
+                add_books.controls.price.invalid &&
+                add_books.controls.price.dirty
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="add_books.controls.price.errors.required">
+                price is required
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label>Writer</label>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter Writer name"
+              formControlName="writer"
+            />
+            <div
+              *ngIf="
+                add_books.controls.writer.invalid &&
+                add_books.controls.writer.dirty
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="add_books.controls.writer.errors.required">
+                writer is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="part2 form_align">
+          <div>
+            <label>Published-year</label>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter Published-year"
+              formControlName="published_year"
+            />
+            <div
+              *ngIf="
+                add_books.controls.published_year.invalid &&
+                add_books.controls.published_year.dirty
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="add_books.controls.published_year.errors.required">
+                Published-year is required
+              </div>
+            </div>
+          </div>
+          <div>
+            <label>Edition</label>
+            <input
+              type="text"
+              name=""
+              placeholder="Enter Edition"
+              formControlName="edition"
+            />
+            <div
+              *ngIf="
+                add_books.controls.edition.invalid &&
+                add_books.controls.edition.dirty
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="add_books.controls.edition.errors.required">
+                Edition is required
+              </div>
+            </div>
+          </div>
+          <div>
+            <label>Status</label>
+            <input
+              type="text"
+              name=""
+              placeholder="Image"
+              formControlName="status"
+            />
+            <div
+              *ngIf="
+                add_books.controls.status.invalid &&
+                add_books.controls.status.dirty
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="add_books.controls.status.errors.required">
+                status is required
+              </div>
+            </div>
+          </div>
+
+          <input
+            type="submit"
+            value="Add Books"
+            class="alert alert-success"
+            [disabled]="add_books.invalid"
+          />
+        </div>
+      </form>
+    </section>
+  </div>
+</section>

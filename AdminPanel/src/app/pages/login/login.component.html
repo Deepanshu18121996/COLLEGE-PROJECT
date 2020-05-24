@@ -1,0 +1,42 @@
+<section>
+  <main>
+    <!-- Adminlogo -->
+    <div>
+      <img src="../../../assets/images/admin/administrator.svg" alt="" />
+    </div>
+    <!-- Form -->
+
+    <div>
+      <form [formGroup]="login" (ngSubmit)="Login()">
+        <div>
+          <label>Email</label>
+          <input type="email" id="" formControlName="email" />
+          <div
+            *ngIf="login.controls.email.invalid && login.controls.email.dirty"
+            class="danger"
+          >
+            <div *ngIf="login.controls.email.errors.required">
+              ! Email required
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label>Password</label>
+          <input type="password" id="" formControlName="password" />
+          <div
+            *ngIf="
+              login.controls.password.invalid && login.controls.password.dirty
+            "
+            class="danger"
+          >
+            <div *ngIf="login.controls.password.errors.required">
+              ! Password required
+            </div>
+          </div>
+        </div>
+        <input type="submit" value="Login" [disabled]="login.invalid" />
+      </form>
+    </div>
+  </main>
+</section>

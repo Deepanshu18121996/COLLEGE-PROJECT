@@ -1,0 +1,46 @@
+<div class="w3-panel w3-border w3-round-large">
+    <div class="form_wrapper">
+        <main>
+            <div class="add_books">
+                <h1>Edit Notes</h1>
+                <section>
+                    <form [formGroup]="myForm" (ngSubmit)="editNote()">
+                        <div class="part1 form_align">
+                            <label>Category Name</label>
+                            <!-- <input type="text" class="form-control" formControlName="cat_name" /> -->
+                            <select input type="text" placeholder=" Select a Category " class="form-control"
+                                formControlName="cat_name">
+                                <option value="" disabled>Select</option>
+                                <option *ngFor="let category of notes_categories$  | async" [value]="category.notecat">
+                                    {{category.notecat}}</option>
+                                <option>others</option>
+                            </select>
+
+                            <!-- <div class="form-group"> -->
+                            <div *ngIf="myForm.value.cat_name == 'others'">
+                                <label>Custom Category</label>
+                                <input type="text" formControlName="custom_cat" />
+                            </div>
+                            <div>
+                                <label>Notes Name</label>
+                                <input type="text" formControlName="note_name" />
+                            </div>
+                            <div>
+                                <label>Notes Description</label>
+                                <textarea formControlName="description"></textarea>
+                            </div>
+                            <div>
+                                <label>Upload PDF</label>
+                                <input type="file" (change)="ufile($event)" />
+                            </div>
+
+                            <input type="submit" value="Submit" class="btn btn-success" [disabled]="myForm.invalid"
+                                style="float:right" />
+                            <input type="submit" value="Back" class="btn btn-danger" routerLink="/main/notes" />
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>

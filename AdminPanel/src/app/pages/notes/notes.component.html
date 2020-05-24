@@ -1,0 +1,56 @@
+<div class="background">
+  <div class="container">
+    <h1>Notes Request</h1>
+    <table class="table table-hover table-borderless">
+      <thead class="thead-dark">
+        <th>S.no</th>
+        <th>Category name</th>
+        <th>Notes name</th>
+        <th>Notes description</th>
+        <th>File</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of noteData; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ c.cat_name == "others" ? c.custom_cat : c.cat_name }}</td>
+          <td>{{ c.note_name }}</td>
+          <td>{{ c.description }}</td>
+          <td>
+            <a href="http://localhost:8899/file/{{ c.file }}" target="_blank"
+              ><img src="/assets/images/pdf.png" width="90" height="60" />
+            </a>
+          </td>
+          <td>{{ c.created_at | date }}</td>
+          <td>
+            <a class="iconGap"
+              ><img
+                src="../../../assets/images/admin/add.png"
+                width="35"
+                height="30"
+                (click)="addnotesbyid(c)"
+            /></a>
+
+            <a class="iconGap"
+              ><img
+                src="../../../assets/images/admin/edit.png"
+                width="40"
+                height="40"
+                routerLink="../editnote/{{ c._id }}"
+            /></a>
+
+            <a
+              ><img
+                src="../../../assets/images/admin/deletenotes.png"
+                width="35"
+                height="35"
+                (click)="delnotes(c._id, c.email)"
+            /></a>
+          </td>
+        </tr>
+      </tbody>
+      <div class="new_menu"></div>
+    </table>
+  </div>
+</div>

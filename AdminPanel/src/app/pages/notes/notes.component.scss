@@ -1,0 +1,80 @@
+.iconGap {
+  margin-right: 8px;
+}
+/* .pdf{
+  background-image: url(/src/assets/images/pdf.png);
+} */
+
+.modal.show {
+  display: block;
+}
+h1 {
+  padding: 1rem;
+  margin-left: 27rem !important;
+  margin: auto;
+  font-weight: 400;
+  color: #e59285;
+  transition: color 250ms ease-in-out;
+  cursor: progress;
+}
+
+h1:hover {
+  color: whitesmoke;
+}
+
+.background {
+  background-image: url(../../../assets/images/admin/notes.jpg);
+  width: 100vw;
+  height: 130vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  flex-grow: 1;
+  transition: all 400ms ease-in-out;
+}
+.background::-webkit-scrollbar {
+  width: 0 !important;
+}
+.container {
+  background-color: #252b3594;
+  overflow: scroll;
+  border: 2px solid black;
+  margin-top: 0.2rem;
+  margin-bottom: 2.2rem;
+  stroke-opacity: inherit;
+  transition: all 300ms ease-in-out;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0px;
+}
+.container::-webkit-scrollbar {
+  width: 0 !important;
+}
+.new_menu {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+
+thead {
+  background-color: black;
+
+  th {
+    color: #e59285;
+  }
+}
+tr:hover {
+  background-color: rgba(255, 254, 254, 0.965);
+}
+tr:hover > td {
+  color: white;
+}

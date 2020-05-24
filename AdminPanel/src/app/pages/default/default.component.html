@@ -1,0 +1,88 @@
+<div class="wrapper">
+  <aside class="aside">
+    <div>
+      <div>
+        <img
+          src="../../../assets/images/admin/letter-b-w.svg"
+          alt=""
+          (click)="default1()"
+        />
+      </div>
+      <h1 (click)="default1()"><span>B</span>ook<span>S</span>tor</h1>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <img src="../../../assets/images/admin/dashboard.svg" alt="" />
+          <h3 (click)="default1()">DashBoard</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/table.svg" alt="" />
+          <h3 (click)="default('user')">UserTable</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/sell.svg" alt="" />
+          <h3 (click)="default('sell_request')">Sell Request</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/order.svg" alt="" />
+          <h3 (click)="default('order')">Orders</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/new_books.svg" alt="" />
+          <h3 (click)="default('newbook')">New Books</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/new notes.png" alt="" />
+          <h3 (click)="default('newnotes')">New Notes</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/book-old.svg" alt="" />
+          <h3 (click)="default('oldbook')">Old Books</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/request_books.svg" alt="" />
+          <h3 (click)="default('requestbook')">Request Books</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/calendar.svg" alt="" />
+          <h3 (click)="default('calender')">Calender</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/events.svg" alt="" />
+          <h3 (click)="default('event')">Forms</h3>
+        </li>
+        <li>
+          <img src="../../../assets/images/admin/notes.svg" alt="" />
+          <h3 (click)="default('notes')">Notes Request</h3>
+        </li>
+
+        <li>
+          <img src="../../../assets/images/admin/logout.svg" alt="" />
+          <h3 (click)="logout()">LogOut</h3>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section>
+    <header class="header">
+      <div class="hambarger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="profile">
+        <img src="../../../assets/images/admin/notifaction.svg" alt="" />
+        <img src="../../../assets/images/admin/message.svg" alt="" />
+        <img src="../../../assets/images/admin/side_admin.svg" alt="" />
+        <h3>Mohmadsabban</h3>
+      </div>
+    </header>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,284 @@
+<div class="form_wrapper">
+  <div class="list_form">
+    <h1>Form List</h1>
+    <ul>
+      <li (click)="show_form(1)">Category</li>
+      <li (click)="show_form(2)">Add Books</li>
+      <li (click)="show_form(3)">Note Category</li>
+      <li (click)="show_form(4)">Add Notes</li>
+      <li (click)="show_form(5)">Sending Mail To All Subscriber</li>
+    </ul>
+  </div>
+  <main>
+    <!------------------ Add/Delete Category ----------------------------->
+    <div class="Category">
+      <h1>Category</h1>
+      <section>
+        <!-- Add Category -->
+        <div class="add">
+          <h3>Add category</h3>
+          <form [formGroup]="add_category" (ngSubmit)="add_cat()">
+            <div>
+              <label>Category Name</label>
+              <input type="text" name="" placeholder="Enter Category" formControlName="category" />
+              <div *ngIf="
+                  add_category.controls.category.invalid &&
+                  add_category.controls.category.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_category.controls.category.errors.required">
+                  Category is required
+                </div>
+              </div>
+            </div>
+
+            <input type="submit" value="Add" class="alert alert-success" [disabled]="add_category.invalid" />
+          </form>
+        </div>
+
+        <!-- Del Category -->
+        <div class="add">
+          <h3>Delete Category</h3>
+          <form [formGroup]="del_category" (ngSubmit)="del_cat()">
+            <div>
+              <label>Category Name</label>
+              <input type="text" name="" placeholder="Enter Category" formControlName="category" />
+              <div *ngIf="
+                  del_category.controls.category.invalid &&
+                  del_category.controls.category.dirty
+                " class="alert alert-danger">
+                <div *ngIf="del_category.controls.category.errors.required">
+                  Category is required
+                </div>
+              </div>
+            </div>
+
+            <input type="submit" value="Delete" class="alert alert-success" [disabled]="del_category.invalid" />
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-------------------------- Add Books ------------------------------->
+    <div class="add_books">
+      <h1>Add Books</h1>
+
+      <section>
+        <form [formGroup]="add_books" (ngSubmit)="books()">
+          <div class="part1 form_align">
+            <div>
+              <label>Name</label>
+              <input type="text" name="" placeholder="Enter Book name" formControlName="name" />
+              <div *ngIf="
+                  add_books.controls.name.invalid &&
+                  add_books.controls.name.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.name.errors.required">
+                  Name is required
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label>Category</label>
+              <input type="text" name="" placeholder="Enter category" formControlName="category" />
+              <div *ngIf="
+                  add_books.controls.category.invalid &&
+                  add_books.controls.category.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.category.errors.required">
+                  Category is required
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label>Price</label>
+              <input type="text" name="" placeholder="Enter price" formControlName="price" />
+              <div *ngIf="
+                  add_books.controls.price.invalid &&
+                  add_books.controls.price.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.price.errors.required">
+                  price is required
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label>Writer</label>
+              <input type="text" name="" placeholder="Enter Writer name" formControlName="writer" />
+              <div *ngIf="
+                  add_books.controls.writer.invalid &&
+                  add_books.controls.writer.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.writer.errors.required">
+                  writer is required
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label>Edition</label>
+              <input type="text" name="" placeholder="Enter Edition" formControlName="edition" />
+              <div *ngIf="
+                  add_books.controls.edition.invalid &&
+                  add_books.controls.edition.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.edition.errors.required">
+                  Edition is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="part2 form_align">
+            <div>
+              <label>Published-year</label>
+              <input type="text" name="" placeholder="Enter Published-year" formControlName="published_year" />
+              <div *ngIf="
+                  add_books.controls.published_year.invalid &&
+                  add_books.controls.published_year.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.published_year.errors.required">
+                  Published-year is required
+                </div>
+              </div>
+            </div>
+            <div>
+              <label>Current-Price</label>
+              <input type="text" name="" placeholder="Enter Current-Price" formControlName="current_price" />
+              <div *ngIf="
+                  add_books.controls.current_price.invalid &&
+                  add_books.controls.current_price.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.current_price.errors.required">
+                  Current-price is required
+                </div>
+              </div>
+            </div>
+            <div>
+              <label>Image</label>
+              <input type="file" name="" placeholder="Image" formControlName="Image" (change)="uimage($event)" />
+              <div *ngIf="
+                  add_books.controls.Image.invalid &&
+                  add_books.controls.Image.dirty
+                " class="alert alert-danger">
+                <div *ngIf="add_books.controls.Image.errors.required">
+                  Image is required
+                </div>
+              </div>
+            </div>
+
+            <input type="submit" value="Add Books" class="alert alert-success" [disabled]="add_books.invalid" />
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!------------------ Add/Delete Note Category ------------------------>
+    <div class="Category">
+      <h1>Note Category</h1>
+      <section>
+        <!-- Add Note Category --->
+        <div class="add">
+          <h3>Add Note category</h3>
+          <form [formGroup]="add_notecategory" (ngSubmit)="add_notecat()">
+            <div>
+              <label>Category Name</label>
+              <input type="text" name="" placeholder="Enter Category" formControlName="category" />
+              <div *ngIf="
+                              add_notecategory.controls.category.invalid &&
+                              add_notecategory.controls.category.dirty
+                            " class="alert alert-danger">
+                <div *ngIf="add_notecategory.controls.category.errors.required">
+                  Category is required
+                </div>
+              </div>
+            </div>
+
+            <input type="submit" value="Add" class="alert alert-success" [disabled]="add_notecategory.invalid" />
+          </form>
+        </div>
+
+        <!-- Delete Note Category --->
+        <div class="add">
+          <h3>Delete Note Category</h3>
+          <form [formGroup]="del_notecategory" (ngSubmit)="del_notecat()">
+            <div>
+              <label>Category Name</label>
+              <input type="text" name="" placeholder="Enter Category" formControlName="category" />
+              <div *ngIf="
+                              del_notecategory.controls.category.invalid &&
+                              del_notecategory.controls.category.dirty
+                            " class="alert alert-danger">
+                <div *ngIf="del_notecategory.controls.category.errors.required">
+                  Category is required
+                </div>
+              </div>
+            </div>
+
+            <input type="submit" value="Delete" class="alert alert-success" [disabled]="del_notecategory.invalid" />
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!------------------------------ Add Notes  -------------------------->
+    <div class="note_form">
+      <h1>Add Notes</h1>
+      <section>
+        <form [formGroup]="myForm" (ngSubmit)="postCat()">
+          <div class="part1 form_align">
+            <div>
+              <label>Category Name</label>
+              <select input type="text" placeholder=" Select a Category " class="form-control"
+                formControlName="cat_name">
+                <option>Select</option>
+                <option *ngFor="let category of notes_categories$ | async">{{category.notecat}}</option>
+                <option>others</option>
+              </select>
+            </div>
+            <div *ngIf="myForm.value.cat_name == 'others'">
+              <label>Custom Category</label>
+              <input type="text" name="" placeholder="Enter category" formControlName="custom_cat" />
+            </div>
+            <div>
+              <label>Note's Name</label>
+              <input type="text" name="" placeholder="Enter Notes's Name" formControlName="note_name" />
+            </div>
+            <div>
+              <label>Notes Description</label>
+              <textarea type="text" placeholder="Enter Note's Description" formControlName="description"></textarea>
+            </div>
+            <div>
+              <label>Upload PDF</label>
+              <input type="file" name="" placeholder="PDF" (change)="ufile($event)" />
+            </div>
+            <input type="submit" value="Add Notes" class="btn btn-success" [disabled]="myForm.invalid" />
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!--------------------------- Subscriber ------------------------------>
+    <div class="subscriber">
+      <section>
+        <h1>Sending Mail</h1>
+
+        <form [formGroup]="sending_mail" (ngSubmit)="mail()">
+          <label> Type Mail</label>
+          <textarea cols="150" rows="10" formControlName="mail"> </textarea>
+          <div *ngIf="
+              sending_mail.controls.mail.invalid &&
+              sending_mail.controls.mail.dirty
+            " class="alert alert-danger error">
+            <div *ngIf="sending_mail.controls.mail.errors.required">
+              Some Text Required
+            </div>
+          </div>
+          <input type="submit" value="Send" id="wait" class="alert alert-success" [disabled]="sending_mail.invalid" />
+        </form>
+      </section>
+    </div>
+
+  </main>
+</div>

@@ -1,0 +1,141 @@
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area bg-image--6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bradcaump__inner text-center">
+          <h2 class="bradcaump-title">Notes</h2>
+          <nav class="bradcaump-content">
+            <a class="breadcrumb_item" href="index.html">Home</a>
+            <span class="brd-separetor">/</span>
+            <span class="breadcrumb_item active">Notes</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End Bradcaump area -->
+<div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
+        <div class="shop__sidebar">
+          <aside class="wedget__categories poroduct--cat">
+            <h3 class="wedget__title">Product Categories</h3>
+            <ul>
+              <li
+                class="noteslicss"
+                *ngFor="let category of note_category$ | async"
+                (click)="reloadNotes(category.notecat)"
+              >
+                <span>{{ category.notecat }}</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <div class="col-lg-9 col-12 order-1 order-lg-2">
+        <div class="tab__container">
+          <div
+            class="shop-grid tab-pane fade show active"
+            id="nav-grid"
+            role="tabpanel"
+          >
+            <div class="row">
+              <!-- <ngx-extended-pdf-viewer [src]="'/file/File-1587662781853.pdf'" useBrowserLocale="true" height="80vh">
+              </ngx-extended-pdf-viewer>
+              <ng2-pdfjs-viewer pdfSrc="http://localhost:8899/file/File-1587662781853.pdf"></ng2-pdfjs-viewer> -->
+              <div *ngFor="let notes of note_detail$ | async" class="col-3">
+                <div class="product product__style--3">
+                  <div class="product__thumb cus">
+                    <a
+                      ><img src="assets/images/pdf.png" alt="product image"
+                    /></a>
+                  </div>
+                  <div class="product__content content--center">
+                    <h4>
+                      <a href="single-product.html">{{ notes.note_name }}</a>
+                    </h4>
+                    <div class="icon">
+                      <div class="icons_inner">
+                        <ul class="add_to_icons">
+                          <li>
+                            <a
+                              ngbPopover="View"
+                              triggers="mouseenter:mouseleave"
+                              href="http://localhost:8899/file/{{ notes.file }}"
+                              target="_blank"
+                              ><i
+                                class="fa fa-eye custom"
+                                aria-hidden="true"
+                              ></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              ngbPopover="Info"
+                              triggers="mouseenter:mouseleave"
+                              ><i
+                                class="fa fa-info-circle custom"
+                                aria-hidden="true"
+                                (click)="
+                                  open(
+                                    content,
+                                    notes.description,
+                                    notes.note_name
+                                  )
+                                "
+                              ></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              ngbPopover="Download"
+                              triggers="mouseenter:mouseleave"
+                              ><i
+                                class="fa fa-arrow-circle-o-down custom"
+                                aria-hidden="true"
+                                (click)="download(notes.file, notes.note_name)"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header modal-primary">
+      <h2 class="modal-title" id="modal-basic-title">{{ notesHeader }}</h2>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      {{ notesDescription }}
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close()"
+      >
+        Close
+      </button>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,44 @@
+section {
+  width: 95%;
+  margin-top: 3rem;
+}
+section > h1 {
+  display: inline-block;
+  font-size: 24px;
+  color: #e59285;
+}
+i {
+  font-size: 22px;
+  margin-left: 0.5rem;
+}
+.order {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: 2rem;
+}
+thead {
+  background-color: black;
+  color: white;
+}
+td > ul > li {
+  min-height: 40px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+td {
+  text-transform: capitalize;
+}
+
+.book {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

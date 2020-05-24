@@ -1,0 +1,95 @@
+<div class="order_wrapper">
+  <section>
+    <div class="search">
+      <input
+        type="text"
+        name=""
+        placeholder="Search By ID"
+        (keyup)="search($event)"
+        autofocus
+      />
+    </div>
+    <div class="table-responsive order" id="order">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>price</th>
+            <th>Image</th>
+            <th>Tax</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Email</th>
+            <th>status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let odata of order_value; let i = index">
+            <td>{{ odata._id }}</td>
+            <td>
+              <ul *ngFor="let inner_name of odata.name">
+                <li class="li_size">{{ inner_name }}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let quantity of odata.quantity">
+                <li class="li_size">{{ quantity }}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let inner_price of odata.price">
+                <li class="li_size">{{ inner_price }}</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let inner_image of odata.image">
+                <li class="li_size">
+                  <img
+                    src="http://localhost:8899/images/{{ inner_image }}"
+                    class="books_image"
+                    alt="product image"
+                  />
+                </li>
+              </ul>
+            </td>
+            <td>{{ odata.gst }}</td>
+            <td>{{ odata.grandtotal }}</td>
+            <td>{{ odata.Created_at | date: "medium" }}</td>
+            <td>{{ odata.email }}</td>
+
+            <td class="edit" (click)="set_status(odata._id, odata.email)">
+              {{ odata.status }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="status">
+  <img src="../../../assets/images/admin/close.svg" alt="" (click)="normal()" />
+  <form [formGroup]="login" (ngSubmit)="sent()">
+    <div>
+      <label>Status</label>
+      <input
+        type="text"
+        id=""
+        placeholder="Type Status"
+        formControlName="text"
+        autofocus
+      />
+      <div
+        *ngIf="login.controls.text.invalid && login.controls.text.dirty"
+        class="danger"
+      >
+        <div *ngIf="login.controls.text.errors.required">
+          ! Text required
+        </div>
+      </div>
+    </div>
+    <input type="submit" value="Sent" id="sub" [disabled]="login.invalid" />
+  </form>
+</div>

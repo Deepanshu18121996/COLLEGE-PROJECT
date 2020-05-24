@@ -1,0 +1,67 @@
+<section class="user_wrapper">
+  <h1>Online User</h1>
+  <div class="table-responsive user">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th>S.no</th>
+
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Address</th>
+          <th>PindCode</th>
+          <th>State</th>
+          <th>Country</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of user_details; let i = index">
+          <td>{{ i + 1 }}</td>
+
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.contact }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.pincode }}</td>
+          <td>{{ user.state }}</td>
+          <td>India</td>
+          <td class="edit">
+            <div id="e_pos" (click)="email(user.email)">
+              <img src="../../../assets/images/admin/sent.svg" alt="" />
+            </div>
+            <div (click)="delete_user(user._id)">
+              <img src="../../../assets/images/admin/edit.svg" alt="" />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="email_send">
+  <img src="../../../assets/images/admin/close.svg" alt="" />
+  <form [formGroup]="login" (ngSubmit)="sent()">
+    <div>
+      <label>Email</label>
+      <input
+        type="text"
+        id=""
+        placeholder="Type Email"
+        formControlName="text"
+        autofocus
+      />
+      <div
+        *ngIf="login.controls.text.invalid && login.controls.text.dirty"
+        class="danger"
+      >
+        <div *ngIf="login.controls.text.errors.required">
+          ! Text required
+        </div>
+      </div>
+    </div>
+    <input type="submit" value="Sent" [disabled]="login.invalid" />
+  </form>
+</div>
