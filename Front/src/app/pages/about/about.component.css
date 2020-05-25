@@ -110,6 +110,11 @@
 }
 .team {
   text-align: right;
+
+  align-self: center;
+  color: black;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
 }
 .team:hover {
   color: #e59285;
