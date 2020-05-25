@@ -1,76 +1,69 @@
-<!-- <br>
-<div class=container>
-    <h1>Request Notes</h1>
-    <div class="account__form">
-        <form [formGroup]="myForm" (ngSubmit)="postCat()">
-            <div class="form-group">
-                <label>Category Name</label>
-                 <input type="text" class="formnote_category-control" formControlName="cat_name" /> 
-                <select input type="text" class="form-control" formControlName="cat_name">
-                    <option>Select</option>
-                    <option *ngFor="let category of notes_categories$ | async">{{category.notecat}}</option>
-                    <option>others</option>
-                </select>
-            </div>
-            <div class="form-group" *ngIf="myForm.value.cat_name == 'others'">
-                <label>Custom Category</label>
-                <input type="text" class="form-control" formControlName="custom_cat" />
-            </div>
-            <div class="form-group">
-                <label>Notes Name</label>
-                <input type="text" class="form-control" formControlName="note_name" />
-            </div>
-            <div class="form-group">
-                <label>Notes Description</label>
-                <textarea class="form-control" formControlName="description"></textarea>
-            </div>
-            <div class="form-group ">
-                <label>Upload PDF</label>
-                <input type="file" class="form-control cus" (change)="ufile($event)" />
-            </div>
-            <div class="form__btn">
-                <button type="submit" class="btn custom" value="Submit" [disabled]="myForm.invalid">Submit</button>
-            </div>
-        </form>
-    </div>
-</div> -->
-
 <section>
-    <h1>Request Notes</h1>
-    <div class="form-div">
-        <form class="form" [formGroup]="myForm" (ngSubmit)="postCat()">
-            <div class="input-div">
-                <label>
-                    <label><i class="fa fa-plus-square-o" aria-hidden="true"> </i>Category Name</label>
-                    <!-- <input type="text" class="formnote_category-control" formControlName="cat_name" /> -->
-                    <select input type="text" formControlName="cat_name">
-                        <option>Select</option>
-                        <option *ngFor="let category of notes_categories$ | async">{{category.notecat}}</option>
-                        <option>others</option>
-                    </select>
-                </label>
-            </div>
+  <h1>Request Notes</h1>
+  <div class="form-div">
+    <form class="form" [formGroup]="myForm" (ngSubmit)="postCat()">
+      <div class="input-div">
+        <label>
+          <label
+            ><i class="fa fa-plus-square-o" aria-hidden="true"> </i>Category
+            Name</label
+          >
+          <!-- <input type="text" class="formnote_category-control" formControlName="cat_name" /> -->
+          <select input type="text" formControlName="cat_name">
+            <option>Select</option>
+            <option *ngFor="let category of notes_categories$ | async">{{
+              category.notecat
+            }}</option>
+            <option>others</option>
+          </select>
+        </label>
+      </div>
 
-            <div class="input-div" *ngIf="myForm.value.cat_name == 'others'">
-                <label>
-                    <i class="fa fa-pencil-square" aria-hidden="true"></i>Custom Category</label>
-                <input type="text" formControlName="custom_cat" />
-            </div>
-            <div class="input-div">
-                <label>
-                    <i class="fa fa-file-text" aria-hidden="true"></i>Note's Name</label>
-                <input type="text" formControlName="note_name" />
-            </div>
-            <div class="input-div ">
-                <label><i class="fa fa-product-hunt" aria-hidden="true"></i>Upload a PDF</label>
-                <input type="file" (change)="ufile($event)" />
-            </div>
-            <div class="input-div">
-                <label><i class="fa fa-file-text-o" aria-hidden="true"></i>Note Description</label>
-                <textarea formControlName="description"></textarea>
-            </div>
+      <div class="input-div" *ngIf="myForm.value.cat_name == 'others'">
+        <label>
+          <i class="fa fa-pencil-square" aria-hidden="true"></i>Custom
+          Category</label
+        >
+        <input
+          type="text"
+          placeholder="Enter Custom Category"
+          formControlName="custom_cat"
+        />
+      </div>
+      <div class="input-div">
+        <label>
+          <i class="fa fa-file-text" aria-hidden="true"></i>Note's Name</label
+        >
+        <input
+          type="text"
+          placeholder="Enter Note's name"
+          formControlName="note_name"
+        />
+      </div>
+      <div class="input-div">
+        <label
+          ><i class="fa fa-product-hunt" aria-hidden="true"></i>Upload a
+          PDF</label
+        >
+        <input type="file" (change)="ufile($event)" />
+      </div>
+      <div class="input-div">
+        <label
+          ><i class="fa fa-file-text-o" aria-hidden="true"></i>Note
+          Description</label
+        >
+        <textarea
+          placeholder="Enter Note's Description"
+          formControlName="description"
+        ></textarea>
+      </div>
 
-            <input type="submit" class="btn btn-success" value="Submit" [disabled]="myForm.invalid" />
-        </form>
-    </div>
+      <input
+        type="submit"
+        class="btn btn-success"
+        value="Submit"
+        [disabled]="myForm.invalid"
+      />
+    </form>
+  </div>
 </section>

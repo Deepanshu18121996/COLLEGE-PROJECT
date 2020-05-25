@@ -33,10 +33,14 @@
             <div class="account__form">
               <div class="input-div">
                 <label
-                  ><i class="fa fa-user" aria-hidden="true"></i>Username or
-                  email address<span class="red">*</span></label
+                  ><i class="fa fa-user" aria-hidden="true"></i>Email
+                  address<span class="red">*</span></label
                 >
-                <input type="text" formControlName="email" />
+                <input
+                  type="text"
+                  placeholder="Enter Email Address"
+                  formControlName="email"
+                />
                 <div
                   *ngIf="
                     login.controls.email.invalid && login.controls.email.dirty
@@ -50,12 +54,16 @@
               </div>
               <div class="input-div">
                 <label>
-                  <i class="fa fa-phone" aria-hidden="true"></i>Contact.No<span
+                  <i class="fa fa-phone" aria-hidden="true"></i>Contact No.<span
                     class="red"
                     >*</span
                   ></label
                 >
-                <input type="text" formControlName="contact" />
+                <input
+                  type="text"
+                  placeholder="Enter Contact No."
+                  formControlName="contact"
+                />
                 <div
                   *ngIf="
                     login.controls.contact.invalid &&
@@ -73,7 +81,11 @@
                   ><i class="fa fa-unlock-alt" aria-hidden="true"></i
                   >Password<span class="red">*</span></label
                 >
-                <input type="password" formControlName="password" />
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  formControlName="password"
+                />
                 <div
                   *ngIf="
                     login.controls.password.invalid &&
@@ -120,7 +132,11 @@
                     >*</span
                   ></label
                 >
-                <input type="text" formControlName="name" />
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  formControlName="name"
+                />
                 <div
                   *ngIf="
                     registation.controls.name.invalid &&
@@ -141,7 +157,11 @@
                     >*</span
                   ></label
                 >
-                <input type="password" formControlName="password" />
+                <input
+                  type="password"
+                  placeholder="Enter Passsword"
+                  formControlName="password"
+                />
                 <div
                   *ngIf="
                     registation.controls.password.invalid &&
@@ -162,7 +182,11 @@
                   ><i class="fa fa-key" aria-hidden="true"></i>Confirm
                   Password<span class="red">*</span></label
                 >
-                <input type="password" formControlName="confirm_password" />
+                <input
+                  type="password"
+                  placeholder="Enter Confirm Passsword"
+                  formControlName="confirm_password"
+                />
                 <div
                   *ngIf="
                     registation.controls.confirm_password.invalid &&
@@ -192,7 +216,11 @@
                   ><i class="fa fa-envelope" aria-hidden="true"></i>Email
                   address<span class="red">*</span></label
                 >
-                <input type="email" formControlName="email" />
+                <input
+                  type="email"
+                  placeholder="Enter Email Address"
+                  formControlName="email"
+                />
                 <div
                   *ngIf="
                     registation.controls.email.invalid &&
@@ -210,7 +238,11 @@
                   ><i class="fa fa-phone-square" aria-hidden="true"></i>Contact
                   No.<span class="red">*</span></label
                 >
-                <input type="tel" formControlName="contact" />
+                <input
+                  type="tel"
+                  placeholder="Enter Contact No."
+                  formControlName="contact"
+                />
                 <div
                   *ngIf="
                     registation.controls.contact.invalid &&
@@ -234,7 +266,11 @@
                   ><i class="fa fa-address-book" aria-hidden="true"></i
                   >Address<span class="red">*</span></label
                 >
-                <input type="address" formControlName="address" />
+                <input
+                  type="address"
+                  placeholder="Enter Address"
+                  formControlName="address"
+                />
                 <div
                   *ngIf="
                     registation.controls.address.invalid &&
@@ -254,7 +290,11 @@
                     >*</span
                   ></label
                 >
-                <input type="text" formControlName="pincode" />
+                <input
+                  type="text"
+                  placeholder="Enter PIN Code"
+                  formControlName="pincode"
+                />
                 <div
                   *ngIf="
                     registation.controls.pincode.invalid &&
@@ -277,7 +317,11 @@
                     >*</span
                   ></label
                 >
-                <input type="text" formControlName="state" />
+                <input
+                  type="text"
+                  placeholder="Enter State"
+                  formControlName="state"
+                />
                 <div
                   *ngIf="
                     registation.controls.state.invalid &&

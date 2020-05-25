@@ -39,16 +39,19 @@
                 <tr *ngFor="let cart of cart_data; let i = index">
                   <td>{{ i + 1 }}</td>
                   <td class="product-thumbnail">
-                    <img src="http://localhost:8899/images/{{ cart.image }}" class="cart_image" alt="" />
+                    <img
+                      src="http://localhost:8899/images/{{ cart.image }}"
+                      class="cart_image"
+                      alt=""
+                    />
                   </td>
                   <td class="product-name">
                     <a href="#">{{ cart.name }}</a>
                   </td>
                   <td class="product-price">
-                    <span class="amount">${{ cart.current_price }}</span>
+                    <span class="amount">&#8377;{{ cart.current_price }}</span>
                   </td>
                   <td class="product-quantity">
-
                     <h1 (click)="increase(i)" class="upper">
                       <i class="fa fa-plus-square" aria-hidden="true"></i>
                     </h1>
@@ -57,14 +60,13 @@
                       <i class="fa fa-minus-square" aria-hidden="true"></i>
                     </h1>
                   </td>
-                  <td class="product-subtotal">${{ cart.total }}</td>
+                  <td class="product-subtotal">&#8377;{{ cart.total }}</td>
                   <td class="product-remove">
                     <a
                       href="javascript:void(0)"
                       (click)="delete_cart_item(cart._id)"
                       ><i class="fa fa-trash" aria-hidden="true"></i
                     ></a>
-
                   </td>
                 </tr>
               </tbody>
@@ -72,7 +74,6 @@
           </div>
         </form>
         <div class="cartbox__btn">
-
           <ul
             class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between"
           >
@@ -83,7 +84,6 @@
               <a href="javascript:void(0)" (click)="Coupon()">Apply Code</a>
             </li>
             <li><a routerLink="/">Update Cart</a></li>
-
 
             <li>
               <a href="javascript:void(0)" (click)="check_out()">Check Out</a>
@@ -101,13 +101,13 @@
               <li>Sub Total</li>
             </ul>
             <ul class="cart__total__tk">
-              <li>${{ gst }}</li>
-              <li>${{ sub_total }}</li>
+              <li>&#8377;{{ gst }}</li>
+              <li>&#8377;{{ sub_total }}</li>
             </ul>
           </div>
           <div class="cart__total__amount">
             <span>Grand Total</span>
-            <span>${{ grand_total }}</span>
+            <span>&#8377;{{ grand_total }}</span>
           </div>
         </div>
       </div>

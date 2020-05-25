@@ -86,6 +86,8 @@ export class NotesComponent implements OnInit {
     });
   }
   addnotesbyid(data) {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     this.savenote.savednotes(data).subscribe((x) => {
       this.saveanddelete = x;
       if (
@@ -104,6 +106,7 @@ export class NotesComponent implements OnInit {
           text: " Notes Added Successfully",
         }).then(() => {
           location.reload();
+          section.classList.toggle("blur");
         });
       }
     });

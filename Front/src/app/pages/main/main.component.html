@@ -12,8 +12,8 @@
             New <span class="color--theme">Products</span>
           </h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered lebmid alteration in some ledmid form
+            Maybe this is why we read, and why in moments of darkness we return
+            to books: to find words for what we already know.
           </p>
         </div>
       </div>
@@ -23,8 +23,14 @@
         <div class="product product__style--3">
           <div class="product__thumb">
             <a class="first__img" href="single-product.html">
-              <img src="http://localhost:8899/images/{{ c.image }}" width="100px" height="350px" id="images"
-                class="curve_image" alt="product image" /></a>
+              <img
+                src="http://localhost:8899/images/{{ c.image }}"
+                width="100px"
+                height="350px"
+                id="images"
+                class="curve_image"
+                alt="product image"
+            /></a>
 
             <div class="hot__box">
               <span class="hot-label">BEST seller</span>
@@ -36,23 +42,33 @@
               <a href="single-product.html">{{ c.name }}</a>
             </h4>
             <ul class="prize d-flex">
-              <li>${{ c.current_price }}</li>
-              <li class="old_prize">${{ c.price }}</li>
+              <li>&#8377;{{ c.current_price }}</li>
+              <li class="old_prize">&#8377;{{ c.price }}</li>
             </ul>
             <div class="action">
               <div class="actions_inner">
                 <ul class="add_to_links">
                   <li>
-                    <a class="wishlist" (click)="cart(c.name, c.current_price, c.writer, c.image)"><i
-                        class="bi bi-shopping-cart-full"></i></a>
+                    <a
+                      class="wishlist"
+                      (click)="cart(c.name, c.current_price, c.writer, c.image)"
+                      ><i class="bi bi-shopping-cart-full"></i
+                    ></a>
                   </li>
                   <li>
-                    <a class="compare" (click)="
+                    <a
+                      class="compare"
+                      (click)="
                         wishlist(c.name, c.current_price, c.writer, c.image)
-                      "><i class="bi bi-heart-beat"></i></a>
+                      "
+                      ><i class="bi bi-heart-beat"></i
+                    ></a>
                   </li>
                   <li>
-                    <a data-toggle="modal" title="Quick View" (click)="
+                    <a
+                      data-toggle="modal"
+                      title="Quick View"
+                      (click)="
                         quickview(
                           c.name,
                           c.price,
@@ -62,7 +78,10 @@
                           c.edition,
                           c.published_year
                         )
-                      " class="quickview modal-view detail-link"><i class="bi bi-search"></i></a>
+                      "
+                      class="quickview modal-view detail-link"
+                      ><i class="bi bi-search"></i
+                    ></a>
                   </li>
                 </ul>
               </div>
@@ -112,20 +131,29 @@
             All <span class="color--theme">Products</span>
           </h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered lebmid alteration in some ledmid form
+            That's the thing about books. They let you travel without moving
+            your feet.
           </p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div *ngFor="let c of science_details$ | async | slice: 0:8" class="col-3">
+      <div
+        *ngFor="let c of science_details$ | async | slice: 0:8"
+        class="col-3"
+      >
         <!--=====First column==================-->
         <!-- Start Single Product -->
         <div class="product product__style--3">
           <div class="product__thumb">
-            <a class="first__img" href="single-product.html"><img src="http://localhost:8899/images/{{ c.image }}"
-                width="100px" height="350px" id="images" alt="product image" /></a>
+            <a class="first__img" href="single-product.html"
+              ><img
+                src="http://localhost:8899/images/{{ c.image }}"
+                width="100px"
+                height="350px"
+                id="images"
+                alt="product image"
+            /></a>
             <div class="hot__box">
               <span class="hot-label">BEST seller</span>
             </div>
@@ -136,23 +164,33 @@
               <a href="single-product.html">{{ c.name }}</a>
             </h4>
             <ul class="prize d-flex">
-              <li>${{ c.current_price }}</li>
-              <li class="old_prize">${{ c.price }}</li>
+              <li>&#8377;{{ c.current_price }}</li>
+              <li class="old_prize">&#8377;{{ c.price }}</li>
             </ul>
             <div class="action">
               <div class="actions_inner">
                 <ul class="add_to_links">
                   <li>
-                    <a class="wishlist" (click)="cart(c.name, c.current_price, c.writer, c.image)"><i
-                        class="bi bi-shopping-cart-full"></i></a>
+                    <a
+                      class="wishlist"
+                      (click)="cart(c.name, c.current_price, c.writer, c.image)"
+                      ><i class="bi bi-shopping-cart-full"></i
+                    ></a>
                   </li>
                   <li>
-                    <a class="compare" (click)="
+                    <a
+                      class="compare"
+                      (click)="
                         wishlist(c.name, c.current_price, c.writer, c.image)
-                      "><i class="bi bi-heart-beat"></i></a>
+                      "
+                      ><i class="bi bi-heart-beat"></i
+                    ></a>
                   </li>
                   <li>
-                    <a data-toggle="modal" title="Quick View" (click)="
+                    <a
+                      data-toggle="modal"
+                      title="Quick View"
+                      (click)="
                         quickview(
                           c.name,
                           c.price,
@@ -162,7 +200,10 @@
                           c.edition,
                           c.published_year
                         )
-                      " class="quickview modal-view detail-link"><i class="bi bi-search"></i></a>
+                      "
+                      class="quickview modal-view detail-link"
+                      ><i class="bi bi-search"></i
+                    ></a>
                   </li>
                 </ul>
               </div>
@@ -193,8 +234,8 @@
             Our <span class="color--theme">Blog</span>
           </h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered lebmid alteration in some ledmid form
+            Let us remember: One book, one pen, one child, and one teacher can
+            change the world.
           </p>
         </div>
       </div>
@@ -204,7 +245,8 @@
         <div class="post__itam">
           <div class="content">
             <h3>
-              <a href="blog-details.html" id="blog">International activities of the Frankfurt Book
+              <a href="blog-details.html" id="blog"
+                >International activities of the Frankfurt Book
               </a>
             </h3>
             <p>
@@ -232,7 +274,9 @@
         <div class="post__itam">
           <div class="content">
             <h3>
-              <a href="blog-details.html" id="blog">Reading has a signficant info number of benefits</a>
+              <a href="blog-details.html" id="blog"
+                >Reading has a signficant info number of benefits</a
+              >
             </h3>
             <p>
               Find all the information you need to ensure your experience.Find
@@ -259,7 +303,8 @@
         <div class="post__itam">
           <div class="content">
             <h3>
-              <a href="blog-details.html" id="blog">The London Book Fair is to be packed with exciting
+              <a href="blog-details.html" id="blog"
+                >The London Book Fair is to be packed with exciting
               </a>
             </h3>
             <p>

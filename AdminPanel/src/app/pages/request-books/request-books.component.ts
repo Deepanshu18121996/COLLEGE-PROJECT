@@ -34,6 +34,8 @@ export class RequestBooksComponent implements OnInit {
   }
 
   delbookreq(id, email) {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     this.book_req.deletebooksreq(id, email).subscribe((res) => {
       this.resData = res;
       if (this.resData.err == 0) {
@@ -43,6 +45,7 @@ export class RequestBooksComponent implements OnInit {
           text: "Books Request Completed",
           footer: "!",
         }).then(() => location.reload());
+        section.classList.toggle("blur");
       } else {
         Swal.fire({
           icon: "error",

@@ -179,7 +179,7 @@ export class LoginComponent implements OnInit {
     if (email != null) {
       Swal.fire({
         title: "Already Logged In",
-        text: "Your account is already Logged In",
+        text: "Your are already Logged In",
         icon: "warning",
         footer: "Logout First",
       }).then(() => {

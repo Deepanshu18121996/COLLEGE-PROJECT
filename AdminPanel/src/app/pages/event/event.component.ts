@@ -145,6 +145,8 @@ export class EventComponent implements OnInit {
 
   //===================== add/delete books category section ===================//
   add_cat() {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     const data = this.add_category.getRawValue();
     this.adding_cat.addcategory(data).subscribe((res) => {
       this.adding_res = res;
@@ -163,12 +165,15 @@ export class EventComponent implements OnInit {
           footer: `${data.category}`,
         }).then(() => {
           this.add_category.reset();
+          section.classList.toggle("blur");
         });
       }
     });
   }
 
   del_cat() {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     const data = this.del_category.getRawValue();
     this.delete_cat.delcategory(data).subscribe((res) => {
       this.delete_res = res;
@@ -187,6 +192,7 @@ export class EventComponent implements OnInit {
           footer: "!",
         }).then(() => {
           this.del_category.reset();
+          section.classList.toggle("blur");
         });
       }
     });
@@ -194,6 +200,8 @@ export class EventComponent implements OnInit {
 
   //======================== add/delete notes category section =====================//
   add_notecat() {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     const data = this.add_notecategory.getRawValue();
     this.adding_notecat.addnotecategory(data).subscribe((res) => {
       this.adding_res = res;
@@ -212,12 +220,15 @@ export class EventComponent implements OnInit {
           footer: `${data.category}`,
         }).then(() => {
           this.add_notecategory.reset();
+          section.classList.toggle("blur");
         });
       }
     });
   }
 
   del_notecat() {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     const data = this.del_notecategory.getRawValue();
     this.delete_notecat.delnotecategory(data).subscribe((res) => {
       this.delete_res = res;
@@ -243,6 +254,7 @@ export class EventComponent implements OnInit {
           footer: "!",
         }).then(() => {
           this.del_notecategory.reset();
+          section.classList.toggle("blur");
         });
       }
     });
@@ -250,6 +262,8 @@ export class EventComponent implements OnInit {
 
   //=========================== add new books section ===============================//
   books() {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     const data = this.add_books.getRawValue();
     let aData = new FormData();
     aData.append("name", data.name);
@@ -280,10 +294,11 @@ export class EventComponent implements OnInit {
         Swal.fire({
           icon: "success",
           title: "Added",
-          text: "Book Added...",
+          text: "Book Added Successfully...",
           footer: "!",
         }).then(() => {
           this.add_books.reset();
+          section.classList.toggle("blur");
         });
       }
     });
@@ -291,6 +306,8 @@ export class EventComponent implements OnInit {
 
   //=============================== add new notes section ===========================//
   postCat() {
+    const section = document.querySelector("section");
+    section.classList.toggle("blur");
     const fData = this.myForm.getRawValue();
     const email = localStorage.getItem("admin_email");
     let formdata = new FormData();
@@ -320,6 +337,7 @@ export class EventComponent implements OnInit {
           footer: "done",
         }).then(() => {
           this.myForm.reset();
+          section.classList.toggle("blur");
         });
       }
     });

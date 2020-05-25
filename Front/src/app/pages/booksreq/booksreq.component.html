@@ -4,34 +4,53 @@
     <form class="form" [formGroup]="bookForm" (ngSubmit)="Bookreq()">
       <div class="input-div">
         <label> <i class="fa fa-book" aria-hidden="true"></i>Book Title </label>
-        <input type="text" formControlName="book_title" />
+        <input
+          type="text"
+          placeholder="Enter Book Title"
+          formControlName="book_title"
+        />
       </div>
 
       <div class="input-div">
         <label>
           <i class="fa fa-user" aria-hidden="true"></i>Author's Name</label
         >
-        <input type="text" formControlName="author_name" />
+        <input
+          type="text"
+          placeholder="Enter Author name"
+          formControlName="author_name"
+        />
       </div>
       <div class="input-div">
         <label>
           <i class="fa fa-product-hunt" aria-hidden="true"></i>Publisher
           Name</label
         >
-        <input type="text" formControlName="publisher" />
+        <input
+          type="text"
+          placeholder="Enter Publisher name"
+          formControlName="publisher"
+        />
       </div>
       <div class="input-div">
         <label>
           <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edition</label
         >
-        <input type="text" formControlName="edition" />
+        <input
+          type="text"
+          placeholder="Enter Edition"
+          formControlName="edition"
+        />
       </div>
       <div class="input-div">
         <label
           ><i class="fa fa-file-text-o" aria-hidden="true"></i
           >Description</label
         >
-        <textarea formControlName="description"></textarea>
+        <textarea
+          placeholder="Enter Description"
+          formControlName="description"
+        ></textarea>
       </div>
       <input
         type="submit"

@@ -74,27 +74,29 @@
           <ul class="check" *ngFor="let order of order">
             <li class="check_width">{{ order.name }}</li>
             <li class="check_width arrange">{{ order.quantity }}</li>
-            <li class="check_width arrange">${{ order.current_price }}</li>
             <li class="check_width arrange">
-              <span>${{ order.total }}</span>
+              &#8377;{{ order.current_price }}
+            </li>
+            <li class="check_width arrange">
+              <span>&#8377;{{ order.total }}</span>
             </li>
           </ul>
           <ul class="shipping__method">
             <li>
-              Cart Subtotal <span>${{ subtotal }}</span>
+              Cart Subtotal <span>&#8377;{{ subtotal }}</span>
             </li>
             <li>
               Gst
               <ul>
                 <li>
-                  <label> ${{ gst }}</label>
+                  <label> &#8377;{{ gst }}</label>
                 </li>
               </ul>
             </li>
           </ul>
           <ul class="total__amount">
             <li>
-              Order Total <span>${{ grandtotal }}</span>
+              Order Total <span>&#8377;{{ grandtotal }}</span>
             </li>
           </ul>
         </div>

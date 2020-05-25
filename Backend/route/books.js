@@ -1634,7 +1634,7 @@ router.post("/api/paymentmail", (req, res) => {
     html: `<h1  style="color:#e59285">Request Approved<h1>
     <p style="font-size:18px; font-weight: 300;color:black;">Dear Customer</p>
   <p style="font-size:18px; font-weight: 300;color:black;">Your request has passed the verfication process.</p>
-  <p  style="font-size:18px; font-weight: 300;color:black;">Bookstor will complete payment process of amount $${price} and Order id <span style="font-size:20px; font-weight: 400;color:blue;">${id}</span></p>
+  <p  style="font-size:18px; font-weight: 300;color:black;">Bookstor will complete payment process of amount &#8377;${price} and Order id <span style="font-size:20px; font-weight: 400;color:blue;">${id}</span></p>
   <h1 style="color:black;font-size:25px; font-weight: 600">Thank you!</h1>`,
   };
   transporter.sendMail(mailOptions, function (error, info) {
@@ -1718,7 +1718,7 @@ router.post("/api/notes_saved", function (req, res) {
     } else {
       notes_Req.findByIdAndDelete({_id: id}, (err1, data) => {
         if (err) {
-          res.json({err: 1, msg: "de;ete error"});
+          res.json({err: 1, msg: "delete error"});
         } else {
           const ins = new notes_category({notecat: cat_name});
           ins.save(function (err) {
